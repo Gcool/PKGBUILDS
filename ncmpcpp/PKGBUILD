@@ -1,0 +1,32 @@
+pkgname=ncmpcpp
+pkgver=0.5.9
+pkgrel=1
+pkgdesc="An almost exact clone of ncmpc with some new features."
+arch=('i686' 'x86_64')
+url="http://unkart.ovh.org/ncmpcpp/"
+license=('GPL')
+depends=('curl' 'libmpdclient' 'taglib' 'ncurses')
+install=ncmpcpp.install
+source=(http://unkart.ovh.org/ncmpcpp/${pkgname}-${pkgver}.tar.bz2)
+md5sums=('07f62d6574d0dcc99cad84adb9754203')
+
+build() {
+  cd "$srcdir/${pkgname}-${pkgver}"
+  ./configure --prefix=/usr \
+ 	 --enable-visualizer \
+         --enable-unicode \
+	 --enable-clock   \
+	 --with-taglib    \
+	 --enable-outputs  \
+  	 --with-curl \
+         --with-fftw \
+	 --mandir="/usr/man" \
+  make
+}
+
+package() {
+  cd "$srcdir/${pkgname}-${pkgver}"
+
+  make DESTDIR="$pkgdir" install
+}
+
