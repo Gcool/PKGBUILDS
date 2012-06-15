@@ -1,5 +1,5 @@
 pkgname=db
-pkgver=5.3.15
+pkgver=5.3.21
 pkgrel=1
 pkgdesc="The Berkeley DB embedded database system"
 arch=('i686' 'x86_64')
