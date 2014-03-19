@@ -1,5 +1,5 @@
 pkgname=firefox-beta-be
-pkgver=14.0b7
+pkgver=29.0b1
 pkgrel=1
 pkgdesc='Standalone web browser from mozilla.org, beta.'
 url='http://www.mozilla.com/en-US/firefox/'
@@ -10,11 +10,11 @@ source=("ftp://ftp.mozilla.org/pub/firefox/releases/${pkgver}/linux-${CARCH}/be/
         "$pkgname.desktop" 
         "$pkgname-safe.desktop")
 
-sha1sums=('e0c94e5647429a4cc406827e940cafce3bb7ba2a'
-'e9e3cdc5507c55f1ac32def8217e021db5a21545')
+sha1sums=('94731d37a81bb64475f0fa50f5924af64fe2bf36'
+'20e33ce3e88df8db6d3c62355490501e1364adf4')
 
 [[ "$CARCH" == "x86_64" ]] && 
-sha1sums[0]="e0c94e5647429a4cc406827e940cafce3bb7ba2a"
+sha1sums[0]="94731d37a81bb64475f0fa50f5924af64fe2bf36"
 
 build() {
 	cd "${srcdir}"
